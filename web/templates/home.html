@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Exam Scanner</h2>
+
+<div class="card">
+
+<h3>Kunci Jawaban</h3>
+
+<textarea id="key">
+1:A
+2:B
+3:C
+</textarea>
+
+<button onclick="saveKey()">Simpan</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>Template Soal</h3>
+
+<textarea id="template">
+{
+ "questions":[
+   {
+     "number":1,
+     "options":{
+       "A":[100,200,40,40],
+       "B":[160,200,40,40],
+       "C":[220,200,40,40],
+       "D":[280,200,40,40]
+     }
+   }
+ ]
+}
+</textarea>
+
+<button onclick="saveTemplate()">Simpan</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>Scan</h3>
+
+<input type="file" id="file" accept="image/*" capture="environment">
+<button onclick="scan()">Scan</button>
+
+<pre id="result"></pre>
+
+</div>
+
+{% endblock %}
